@@ -7,7 +7,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Poppins;
-  /* border: 1px solid red; */
 }
 
 body {
@@ -15,9 +14,11 @@ body {
   min-height: 100vh;
 }
 
+/* header begins */
+
 header {
   animation: fade-out linear;
-  animation-timeline: view(100px);
+  animation-timeline: view();
   animation-range: exit;
 }
 
@@ -46,7 +47,7 @@ nav > a {
   color: whitesmoke;
   font-size: 20px;
 }
-.you {
+.dev {
   max-width: 100%;
   height: auto;
 }
@@ -57,14 +58,24 @@ div > a {
   color: #fff;
   font-size: 20px;
 }
-.tricks {
+.navbar button:first-child {
   padding: 6px 9px;
   background-color: #fff;
   border-radius: 5px;
   font-weight: 600;
   border: none;
 }
-.tips {
+
+/* hero section  */
+.hero-sec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 30px;
+  background-color: #f4f4f4;
+}
+
+.hero-sec button {
   padding: 6px 9px;
   margin-top: 20px;
   background-color: #fff;
@@ -73,8 +84,25 @@ div > a {
   border: none;
 }
 
-/* hero section begins
+.hero-sec h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-sec p {
+  max-width: 500px;
+}
+
+.ten {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 30px 0;
+  color: #fff;
+}
+
+/* main / article section
  */
+
 main,
 article {
   display: grid;
@@ -82,31 +110,10 @@ article {
   justify-content: center;
   margin-left: 30px;
 }
-.hero-sec {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px;
-  background-color: #f4f4f4;
-}
-.hero-sec h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
 
-.lorem {
-  max-width: 500px;
-}
-.ten {
-  text-align: center;
-  font-size: 1.5rem;
-  margin: 30px 0;
-  color: #fff;
-}
 .flip-card {
   position: relative;
   aspect-ratio: 15/9;
-  /* perspective: 3200px; */
 }
 
 .front-side,
@@ -122,18 +129,18 @@ article {
   font-size: 20px;
   transition: all 1s ease-in-out;
   backface-visibility: hidden;
+  font-weight: bold;
+  text-align: center;
 }
 .front-side {
   background-color: white;
   color: gray;
   transform: rotateX(0deg);
-  /* font-style: italic; */
 }
 .back-side {
   background: hsl(215.9, 20%, 50%);
   color: whitesmoke;
   transform: rotateX(-180deg);
-  /* font-style: italic; */
   text-align: center;
   font-size: 15px;
 }
@@ -174,7 +181,7 @@ footer {
   margin-top: 4px;
 }
 
-/* hamburger styling */
+/* hamburger toggle styling */
 
 .hamburger {
   cursor: pointer;
@@ -218,11 +225,11 @@ footer {
   position: absolute;
   right: 100%;
   margin: 0 auto;
-  width: 55%;
-  height: 30vh;
+  width: 47%;
+  height: 27vh;
   z-index: 1;
+  transition: all 0.3s ease-in-out;
 }
-
 .mobile-nav a {
   display: block;
   padding-top: 25px;
@@ -233,26 +240,19 @@ footer {
   font-weight: 700;
   transition: all 0.3s ease-in-out;
 }
-
 .mobile-nav.is-active {
   left: 0;
   transition: 0.4s;
 }
-
 .mobile-nav a:hover {
   background-color: #fff;
   text-decoration: underline;
 }
+
 @media screen and (max-width: 500px) {
   main,
   article {
     grid-template-columns: 1fr;
-  }
-  @keyframes fade-out {
-    to {
-      opacity: 0;
-      scale: 0;
-    }
   }
   div > a {
     display: none;
@@ -268,9 +268,8 @@ footer {
   }
   .hero-sec {
     flex-wrap: wrap;
-    margin-top: 50px;
   }
-  .you {
+  .dev {
     margin-top: 40px;
     width: 90%;
   }
@@ -279,19 +278,14 @@ footer {
   }
   footer {
     flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px 10px;
   }
-  .white p {
-    margin: 0;
-    text-align: start;
+  .white {
+    margin: 20px;
   }
 }
 @media screen and (max-width: 1200px) {
-  @keyframes fade-out {
-    to {
-      opacity: 0;
-      scale: 0;
-    }
-  }
   footer {
     flex-wrap: wrap;
   }
